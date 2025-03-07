@@ -1,0 +1,12 @@
+@baseUrl =  http://localhost:3000
+
+### AppControllerGatHello
+
+# @name AppControllerGatHello
+GET {{baseUrl}}/
+
+
+### ExemploDeRota
+
+# @name ExemploDeRota
+GET {{baseUrl}}/exemplo
