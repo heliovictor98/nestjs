@@ -18,7 +18,7 @@ Para rodar os exemplos deste repositório, siga os passos abaixo:
 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seu-usuario/nestjs-studies.git
+   git clone https://github.com/heliovictor98/nestjs
    ```
 2. Acesse o diretório:
    ```sh
