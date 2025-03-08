@@ -15,3 +15,8 @@ GET {{baseUrl}}/exemplo
 
 # @name ConceitosManualControllerHome
 GET {{baseUrl}}/conceitos-manual
+
+### ConceitosAutomaticoController Home
+
+# @name ConceitosAutomaticoControllerHome
+GET {{baseUrl}}/conceitos-automatico
