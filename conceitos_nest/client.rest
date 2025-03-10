@@ -1,11 +1,14 @@
 @baseUrl =  http://localhost:3000
 
 # RECADOS
-###
+### LISTA TODOS OS RECADOS
 GET {{baseUrl}}/recados/
-###
-GET {{baseUrl}}/recados/12
-###
+?limit=200
+&offset=300
+# &user=luiz
+### LISTA UM RECADOR POR ID
+GET {{baseUrl}}/recados/1
+### CRIA UM RECADO COM JSON
 POST {{baseUrl}}/recados/
 Content-Type: application/json
 
@@ -13,6 +16,18 @@ Content-Type: application/json
     "recado": "Este e o recado que estou enviando",
     "nova chave": "outro valor"
 }
+
+### ATUALIZADO UM RECADO
+PATCH {{baseUrl}}/recados/1
+Content-Type: application/json
+
+{
+    "recado": "Este e o recado que estou enviando",
+    "atualizar": true
+}
+
+### Apaga um recado
+DELETE {{baseUrl}}/recados/1
 
 
 ### AppControllerGatHello
