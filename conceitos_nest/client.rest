@@ -1,5 +1,20 @@
 @baseUrl =  http://localhost:3000
 
+# RECADOS
+###
+GET {{baseUrl}}/recados/
+###
+GET {{baseUrl}}/recados/12
+###
+POST {{baseUrl}}/recados/
+Content-Type: application/json
+
+{
+    "recado": "Este e o recado que estou enviando",
+    "nova chave": "outro valor"
+}
+
+
 ### AppControllerGatHello
 
 # @name AppControllerGatHello
