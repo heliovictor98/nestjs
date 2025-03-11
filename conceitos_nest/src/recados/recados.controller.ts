@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { RecadosService } from './recados.service';
 
 
 
@@ -15,18 +16,21 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestj
 @Controller('recados')
 export class RecadosController {
 
+    constructor(private recadosService: RecadosService){}
+
     // Encontrar todos os recados
     @Get()
     findAll(@Query() pagination: any) {
         const {limit = 10, offset = 0} = pagination;
-        return `Essa rota retorna todos os recados. Limit= ${limit} , Offset= ${offset}`;
+        //return `Essa rota retorna todos os recados. Limit= ${limit} , Offset= ${offset}`;
+        return this.recadosService.findAll();
     }
 
     // Encontrar Um recado
     @Get(':id')
     findOne(@Param('id') id: string) {
         console.log(id);
-        return `Essa rota retorna um recado!! ID ${id}`;
+        return this.recadosService.findOne(id);
     }
 
     @Post()

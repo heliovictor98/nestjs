@@ -13,21 +13,27 @@ POST {{baseUrl}}/recados/
 Content-Type: application/json
 
 {
-    "recado": "Este e o recado que estou enviando",
-    "nova chave": "outro valor"
+"texto": "Novo Recado",
+"de": "Joana",
+"para": "João",
+"lido": false,
+"data": "2025-03-10T23:53:03.444Z"
 }
 
 ### ATUALIZADO UM RECADO
-PATCH {{baseUrl}}/recados/1
+PATCH {{baseUrl}}/recados/2
 Content-Type: application/json
 
 {
-    "recado": "Este e o recado que estou enviando",
-    "atualizar": true
+ "texto": "Este é um recado de teste",
+ "de": "Joana",
+ "para": "João",
+ "lido": false,
+ "data": "2025-03-10T23:53:03.444Z"
 }
 
 ### Apaga um recado
-DELETE {{baseUrl}}/recados/1
+DELETE {{baseUrl}}/recados/2
 
 
 ### AppControllerGatHello
