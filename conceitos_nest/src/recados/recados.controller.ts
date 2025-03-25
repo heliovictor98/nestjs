@@ -35,20 +35,17 @@ export class RecadosController {
 
     @Post()
     create(@Body() body: any){
-        return  body;
+        return  this.recadosService.create(body);
     }
 
     @Patch(':id')
     update(@Param('id') id: string, @Body() body: any){
-        return {
-            id,
-            ...body
-        }
+        this.recadosService.update(id, body);
     }
 
     @Delete(':id')
     remove(@Param('id') id: string){
-        return `Essa rota APAGA o recado ID ${id}`
+        this.recadosService.remove(id);
     }
 
     

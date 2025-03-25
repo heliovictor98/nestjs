@@ -7,7 +7,7 @@ GET {{baseUrl}}/recados/
 &offset=300
 # &user=luiz
 ### LISTA UM RECADOR POR ID
-GET {{baseUrl}}/recados/1
+GET {{baseUrl}}/recados/2
 ### CRIA UM RECADO COM JSON
 POST {{baseUrl}}/recados/
 Content-Type: application/json
@@ -25,7 +25,7 @@ PATCH {{baseUrl}}/recados/2
 Content-Type: application/json
 
 {
- "texto": "Este é um recado de teste",
+ "texto": "Atualizar recado 2",
  "de": "Joana",
  "para": "João",
  "lido": false,
