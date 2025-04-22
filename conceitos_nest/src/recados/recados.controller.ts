@@ -36,11 +36,9 @@ import { PaginationDto } from 'src/common/dto/pagination.dto';
     @HttpCode(HttpStatus.OK)
     @Get()
     findAll(@Query() paginationDto: PaginationDto) {
-      const { limit = 10, offset = 0 } = paginationDto;
-
-      console.log(limit, typeof limit);
+  
       // return `Retorna todos os recados. Limit=${limit}, Offset=${offset}.`;
-      return this.recadosService.findAll();
+      return this.recadosService.findAll(paginationDto);
     }
   
     @Get(':id')
