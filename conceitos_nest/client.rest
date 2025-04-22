@@ -48,6 +48,18 @@ Content-Type: application/json
 
 }
 
+### Atualiza um recado
+PATCH {{baseUrl}}/pessoas/6/
+Content-Type: application/json
+
+{
+    "texto": "Recado 1",
+    "lido": true
+}
+
+### Apaga uma pessoa
+DELETE {{baseUrl}}/pessoas/14/
+
 ### AppControllerGetHello
 
 # @name AppControllerGetHello
