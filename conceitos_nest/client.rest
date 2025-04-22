@@ -13,8 +13,8 @@ Content-Type: application/json
 
 {
     "texto": "NOVO Recado",
-    "de": "Helio",
-    "para": "Larissa"
+    "deId": 17,
+    "paraId": 19
 }
 ### Atualiza um recado
 PATCH {{baseUrl}}/recados/6/
@@ -42,19 +42,19 @@ POST {{baseUrl}}/pessoas/
 Content-Type: application/json
 
 {
-    "email": "email3@email.com",
+    "email": "email32@email.com",
     "password": "123456" ,
     "nome": "Luiz"
 
 }
 
 ### Atualiza um recado
-PATCH {{baseUrl}}/pessoas/6/
+PATCH {{baseUrl}}/pessoas/17/
 Content-Type: application/json
 
 {
-    "texto": "Recado 1",
-    "lido": true
+    "password": "6511111",
+    "nome": "Helio"
 }
 
 ### Apaga uma pessoa

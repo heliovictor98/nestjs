@@ -5,6 +5,7 @@ import { UpdateRecadoDto } from './dto/update-recado.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { urlToHttpOptions } from 'url';
+import { PessoasService } from 'src/pessoas/pessoas.service';
 
 @Injectable()
 export class RecadosService {
@@ -12,19 +13,20 @@ export class RecadosService {
     constructor(
         @InjectRepository(Recado)
         private readonly recadoRepository: Repository<Recado>,
+        private readonly pessoaService: PessoasService
     ) {}
 
   private lastId = 1;
-  private recados: Recado[] = [
-    {
-      id: 1,
-      texto: 'Este é um recado de teste',
-      de: 'Joana',
-      para: 'João',
-      lido: false,
-      data: new Date(),
-    },
-  ];
+  // private recados: Recado[] = [
+  //   {
+  //     id: 1,
+  //     texto: 'Este é um recado de teste',
+  //     de: 'Joana',
+  //     para: 'João',
+  //     lido: false,
+  //     data: new Date(),
+  //   },
+  // ];
 
   throwNotFoundError() {
     throw new NotFoundException('Recado não encontrado');
@@ -48,16 +50,36 @@ export class RecadosService {
   }
 
   async create(createRecadoDto: CreateRecadoDto) {
+    const {deId, paraId} = createRecadoDto;
     
+    console.log(deId, paraId)
+    const de = await this.pessoaService.findOne(deId);
+    const para = await this.pessoaService.findOne(paraId);
+
+    
+ 
+
     const novoRecado = {
-      ...createRecadoDto,
+      texto: createRecadoDto.texto,
+      de,
+      para,
       lido: false,
       data: new Date(),
     };
 
     const recado = await this.recadoRepository.create(novoRecado);
-    console.log(recado);
-    return this.recadoRepository.save(recado);
+    await this.recadoRepository.save(recado);
+    return {
+      ...recado,
+      de: {
+        id: recado.de.id,
+        nome: recado.de.nome
+      },
+      para: {
+        id: recado.para.id,
+        nome: recado.para.nome
+      }
+    };
   }
 
   async update(id: number, updateRecadoDto: UpdateRecadoDto) {
