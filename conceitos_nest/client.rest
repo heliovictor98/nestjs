@@ -6,7 +6,7 @@ GET {{baseUrl}}/recados/
 ?limit=10
 &offset=0
 ### Lista apenas um recado
-GET {{baseUrl}}/recados/1/
+GET {{baseUrl}}/recados/18/
 ### Cria um recado
 POST {{baseUrl}}/recados/
 Content-Type: application/json
@@ -49,11 +49,11 @@ Content-Type: application/json
 }
 
 ### Atualiza um recado
-PATCH {{baseUrl}}/pessoas/17/
+PATCH {{baseUrl}}/pessoas/19/
 Content-Type: application/json
 
 {
-    "password": "6511111",
+    "password": "542187261",
     "nome": "Helio"
 }
 
