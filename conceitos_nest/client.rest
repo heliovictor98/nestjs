@@ -3,7 +3,7 @@
 # RECADOS
 ### Lista todos os recados
 GET {{baseUrl}}/recados/
-?limit=10
+?limit=1
 &offset=0
 ### Lista apenas um recado
 GET {{baseUrl}}/recados/18/
@@ -13,16 +13,16 @@ Content-Type: application/json
 
 {
     "texto": "NOVO Recado",
-    "deId": 17,
-    "paraId": 19
+    "deId": 22,
+    "paraId": 21
 }
 ### Atualiza um recado
-PATCH {{baseUrl}}/recados/6/
+PATCH {{baseUrl}}/recados/21/
 Content-Type: application/json
 
-{
-    "texto": "Recado 1",
-    "lido": true
+{   
+    "texto": "Bla bla",
+    "lido": false
 }
 ### Apaga um recado
 DELETE {{baseUrl}}/recados/7/
@@ -42,13 +42,14 @@ POST {{baseUrl}}/pessoas/
 Content-Type: application/json
 
 {
-    "email": "email32@email.com",
+    "email": "fabricio12@email.com",
     "password": "123456" ,
-    "nome": "Luiz"
+    "nome": "Ana"
 
 }
 
-### Atualiza um recado
+
+### Atualiza um pessoa
 PATCH {{baseUrl}}/pessoas/19/
 Content-Type: application/json
 
@@ -58,7 +59,7 @@ Content-Type: application/json
 }
 
 ### Apaga uma pessoa
-DELETE {{baseUrl}}/pessoas/14/
+DELETE {{baseUrl}}/pessoas/23/
 
 ### AppControllerGetHello
 
